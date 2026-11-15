@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbdcca76156d9344807675a971cc700, type: 3}
+  m_Name: DefaultAssetProfile
+  m_EditorClassIdentifier: Assembly-CSharp::PlayableAssetProfile
+  player: {fileID: 21300000, guid: c1822017d2a007c43baa0f9cffab1498, type: 3}
+  ground: {fileID: 21300000, guid: 9529b86b06b5d3e4a8e7070cd6cefcfe, type: 3}
+  coin: {fileID: 21300000, guid: 99a937097b612cb44bc63f9e2cbb242d, type: 3}
+  spikes: {fileID: 21300000, guid: a502d814621cc0f4f9344cde72cc39b9, type: 3}
+  exit: {fileID: 21300000, guid: 9751f7785759d7840ba2306cc8ee081b, type: 3}
