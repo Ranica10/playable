@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cbdcca76156d9344807675a971cc700, type: 3}
   m_Name: DefaultAssetProfile
   m_EditorClassIdentifier: Assembly-CSharp::PlayableAssetProfile
-  player: {fileID: 21300000, guid: c1822017d2a007c43baa0f9cffab1498, type: 3}
-  ground: {fileID: 21300000, guid: 9529b86b06b5d3e4a8e7070cd6cefcfe, type: 3}
-  coin: {fileID: 21300000, guid: 99a937097b612cb44bc63f9e2cbb242d, type: 3}
-  spikes: {fileID: 21300000, guid: a502d814621cc0f4f9344cde72cc39b9, type: 3}
-  exit: {fileID: 21300000, guid: 9751f7785759d7840ba2306cc8ee081b, type: 3}
+  player: {fileID: 8906278368903136708, guid: c1822017d2a007c43baa0f9cffab1498, type: 3}
+  ground: {fileID: -7755501270924354645, guid: 9529b86b06b5d3e4a8e7070cd6cefcfe, type: 3}
+  coin: {fileID: -6107886562037109122, guid: 99a937097b612cb44bc63f9e2cbb242d, type: 3}
+  spikes: {fileID: -2018948931647471490, guid: a502d814621cc0f4f9344cde72cc39b9, type: 3}
+  exit: {fileID: -3753794576198080855, guid: 9751f7785759d7840ba2306cc8ee081b, type: 3}

@@ -76,13 +76,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 400, y: 146, z: 404, w: 136}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -148,12 +148,12 @@ TextureImporter:
       name: Standalone gold coin_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 23
-        width: 1132
-        height: 979
+        x: 407
+        y: 146
+        width: 722
+        height: 738
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -166,251 +166,23 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Standalone gold coin_1
-      rect:
-        serializedVersion: 2
-        x: 687
-        y: 983
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a839b338c2f6d580800000000000000
-      internalID: -8802581479973898073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Standalone gold coin_2
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 565
-        width: 165
-        height: 247
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d529e32ddc7f542d0800000000000000
-      internalID: -3294955088983977379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Standalone gold coin_3
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 610
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8ad73548c0157e5e0800000000000000
-      internalID: -1880445205202371160
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Standalone gold coin_4
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 567
-        width: 9
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0750ace14b5d774d0800000000000000
-      internalID: -3136803645852875408
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Standalone gold coin_5
-      rect:
-        serializedVersion: 2
-        x: 292
-        y: 457
-        width: 33
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d7e13ab6fd59bebd0800000000000000
-      internalID: -2599819573060231555
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Standalone gold coin_6
-      rect:
-        serializedVersion: 2
-        x: 1216
-        y: 471
-        width: 31
-        height: 89
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 14eb923bc7d08d5f0800000000000000
-      internalID: -731820110214742463
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Standalone gold coin_7
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 382
-        width: 15
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f569a325ffa7d43c0800000000000000
-      internalID: -4373704426092063137
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Standalone gold coin_8
-      rect:
-        serializedVersion: 2
-        x: 1160
-        y: 80
-        width: 219
-        height: 344
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 386c7cea79386bff0800000000000000
-      internalID: -20684460780960125
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Standalone gold coin_9
-      rect:
-        serializedVersion: 2
-        x: 568
-        y: 63
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ebfea4286ddb52440800000000000000
-      internalID: 4910539697723994046
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Standalone gold coin_10
-      rect:
-        serializedVersion: 2
-        x: 574
-        y: 63
-        width: 7
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7d791aeae4ad1fb70800000000000000
-      internalID: 8931159567524534231
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1536.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Standalone gold coin_0: -6107886562037109122
-      Standalone gold coin_1: -8802581479973898073
-      Standalone gold coin_10: 8931159567524534231
-      Standalone gold coin_2: -3294955088983977379
-      Standalone gold coin_3: -1880445205202371160
-      Standalone gold coin_4: -3136803645852875408
-      Standalone gold coin_5: -2599819573060231555
-      Standalone gold coin_6: -731820110214742463
-      Standalone gold coin_7: -4373704426092063137
-      Standalone gold coin_8: -20684460780960125
-      Standalone gold coin_9: 4910539697723994046
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
