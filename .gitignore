@@ -1,0 +1,16 @@
+# Unity-generated folders
+/[Uu]nity/[Ll]ibrary/
+/[Uu]nity/[Tt]emp/
+/[Uu]nity/[Oo]bj/
+/[Uu]nity/[Ll]ogs/
+/[Uu]nity/[Uu]ser[Ss]ettings/
+/[Uu]nity/[Bb]uild/
+/[Uu]nity/[Bb]uilds/
+
+# IDE-generated files
+.vs/
+.idea/
+*.csproj
+*.sln
+*.slnx
+*.user
