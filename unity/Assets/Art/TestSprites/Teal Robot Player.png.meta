@@ -1,0 +1,1354 @@
+fileFormatVersion: 2
+guid: c1822017d2a007c43baa0f9cffab1498
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8906278368903136708
+    second: Teal Robot Player_0
+  - first:
+      213: -3449220477272834406
+    second: Teal Robot Player_1
+  - first:
+      213: -8276843677043187008
+    second: Teal Robot Player_2
+  - first:
+      213: -4158482408080117437
+    second: Teal Robot Player_3
+  - first:
+      213: 3590310499694516526
+    second: Teal Robot Player_4
+  - first:
+      213: 6421936465888881716
+    second: Teal Robot Player_5
+  - first:
+      213: 4460302992026600447
+    second: Teal Robot Player_6
+  - first:
+      213: 3042803348345058441
+    second: Teal Robot Player_7
+  - first:
+      213: 1010256811209134764
+    second: Teal Robot Player_8
+  - first:
+      213: 3919728359589755212
+    second: Teal Robot Player_9
+  - first:
+      213: -5790547292732191306
+    second: Teal Robot Player_10
+  - first:
+      213: -7882752788222943571
+    second: Teal Robot Player_11
+  - first:
+      213: -7974884082939747247
+    second: Teal Robot Player_12
+  - first:
+      213: 6832480772515752019
+    second: Teal Robot Player_13
+  - first:
+      213: -5329301372656487494
+    second: Teal Robot Player_14
+  - first:
+      213: 2742922524554536992
+    second: Teal Robot Player_15
+  - first:
+      213: 1711063751886929649
+    second: Teal Robot Player_16
+  - first:
+      213: -1957124753209957096
+    second: Teal Robot Player_17
+  - first:
+      213: 2442368007267098397
+    second: Teal Robot Player_18
+  - first:
+      213: -8222759973683464950
+    second: Teal Robot Player_19
+  - first:
+      213: -4657148908558548732
+    second: Teal Robot Player_20
+  - first:
+      213: 5933630779792152311
+    second: Teal Robot Player_21
+  - first:
+      213: 1185310212648742437
+    second: Teal Robot Player_22
+  - first:
+      213: 8507762187492003918
+    second: Teal Robot Player_23
+  - first:
+      213: -7075999930768499938
+    second: Teal Robot Player_24
+  - first:
+      213: -2405421563649763149
+    second: Teal Robot Player_25
+  - first:
+      213: -6452388703426204546
+    second: Teal Robot Player_26
+  - first:
+      213: -5715607482327013356
+    second: Teal Robot Player_27
+  - first:
+      213: 7171878610363889893
+    second: Teal Robot Player_28
+  - first:
+      213: 1605033402524205508
+    second: Teal Robot Player_29
+  - first:
+      213: 5534748617285075744
+    second: Teal Robot Player_30
+  - first:
+      213: -4693616849168385232
+    second: Teal Robot Player_31
+  - first:
+      213: -6393020471759086810
+    second: Teal Robot Player_32
+  - first:
+      213: 7945740630751073789
+    second: Teal Robot Player_33
+  - first:
+      213: -2632039961732687901
+    second: Teal Robot Player_34
+  - first:
+      213: -7676361899185346305
+    second: Teal Robot Player_35
+  - first:
+      213: 3998147333262367656
+    second: Teal Robot Player_36
+  - first:
+      213: 2214965655799593531
+    second: Teal Robot Player_37
+  - first:
+      213: -2390294937469472247
+    second: Teal Robot Player_38
+  - first:
+      213: 4149391987197426013
+    second: Teal Robot Player_39
+  - first:
+      213: -1127900104253657031
+    second: Teal Robot Player_40
+  - first:
+      213: 1747485241520111761
+    second: Teal Robot Player_41
+  - first:
+      213: 4669713920799711123
+    second: Teal Robot Player_42
+  - first:
+      213: 6815011645870479594
+    second: Teal Robot Player_43
+  - first:
+      213: -632203625001266515
+    second: Teal Robot Player_44
+  - first:
+      213: 7538248837574081295
+    second: Teal Robot Player_45
+  - first:
+      213: -3743595100151699933
+    second: Teal Robot Player_46
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Teal Robot Player_0
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 1332
+        width: 126
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c587313df4799b70800000000000000
+      internalID: 8906278368903136708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_1
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1275
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e362c2048e120d0800000000000000
+      internalID: -3449220477272834406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 26
+        width: 1001
+        height: 1225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c22760478eb22d80800000000000000
+      internalID: -8276843677043187008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_3
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1159
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3417cad484a1a46c0800000000000000
+      internalID: -4158482408080117437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_4
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 1101
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2995af806853d130800000000000000
+      internalID: 3590310499694516526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_5
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1104
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43c2f6bd03d4f1950800000000000000
+      internalID: 6421936465888881716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_6
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1081
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff38b5680fd26ed30800000000000000
+      internalID: 4460302992026600447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_7
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1006
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 984f97b16853a3a20800000000000000
+      internalID: 3042803348345058441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_8
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 889
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca21a0c9737250e00800000000000000
+      internalID: 1010256811209134764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_9
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 906
+        width: 90
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c493f59ec2ca56630800000000000000
+      internalID: 3919728359589755212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_10
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 855
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd0999bae7d3afa0800000000000000
+      internalID: -5790547292732191306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_11
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 817
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dae50cd8a16da9290800000000000000
+      internalID: -7882752788222943571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_12
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 782
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 154a577ed25835190800000000000000
+      internalID: -7974884082939747247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_13
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 799
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 358ec740019d1de50800000000000000
+      internalID: 6832480772515752019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_14
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 771
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab3fecd23a48a06b0800000000000000
+      internalID: -5329301372656487494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_15
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 774
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 028ad72e081d01620800000000000000
+      internalID: 2742922524554536992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_16
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 727
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fe744faa6beeb710800000000000000
+      internalID: 1711063751886929649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_17
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 733
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 815ebcff765e6d4e0800000000000000
+      internalID: -1957124753209957096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_18
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 734
+        width: 14
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1f1feb23c805e120800000000000000
+      internalID: 2442368007267098397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_19
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 710
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a05fb47be53e2ed80800000000000000
+      internalID: -8222759973683464950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_20
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 718
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40105470ebb7e5fb0800000000000000
+      internalID: -4657148908558548732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_21
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 710
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f6d5d9a1cd785250800000000000000
+      internalID: 5933630779792152311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_22
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 699
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e229dbb51137010800000000000000
+      internalID: 1185310212648742437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_23
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 700
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4016fa22a4a11670800000000000000
+      internalID: 8507762187492003918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_24
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 615
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1bdadf9d8ffccd90800000000000000
+      internalID: -7075999930768499938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_25
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 604
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b8579315d93e9ed0800000000000000
+      internalID: -2405421563649763149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_26
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 427
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7ca98319a28476a0800000000000000
+      internalID: -6452388703426204546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_27
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 404
+        width: 11
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 418655407451ea0b0800000000000000
+      internalID: -5715607482327013356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_28
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 369
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e836fe0991a78360800000000000000
+      internalID: 7171878610363889893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_29
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 369
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c187123069364610800000000000000
+      internalID: 1605033402524205508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_30
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 371
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0238c560b806fcc40800000000000000
+      internalID: 5534748617285075744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_31
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 313
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03bb781f75cecdeb0800000000000000
+      internalID: -4693616849168385232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_32
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 320
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62bdffaa0cd6747a0800000000000000
+      internalID: -6393020471759086810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_33
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 168
+        width: 53
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df55e4d5101f44e60800000000000000
+      internalID: 7945740630751073789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_34
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 209
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e75a46999d197bd0800000000000000
+      internalID: -2632039961732687901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_35
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 109
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff8e6b71685187590800000000000000
+      internalID: -7676361899185346305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_36
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 118
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ab57c601d54c7730800000000000000
+      internalID: 3998147333262367656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_37
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 114
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3aff9f47832dbe10800000000000000
+      internalID: 2214965655799593531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_38
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 83
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 902b7bf2b67f3ded0800000000000000
+      internalID: -2390294937469472247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_39
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 82
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5931c6270a959930800000000000000
+      internalID: 4149391987197426013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_40
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 80
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 930b5dfb4d4e850f0800000000000000
+      internalID: -1127900104253657031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_41
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 86
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1904b0f8190504810800000000000000
+      internalID: 1747485241520111761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_42
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 86
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39f96fbd1182ec040800000000000000
+      internalID: 4669713920799711123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_43
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 82
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae892440cf8c39e50800000000000000
+      internalID: 6815011645870479594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_44
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 64
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da2d5121726f937f0800000000000000
+      internalID: -632203625001266515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_45
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 58
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0bba10e06d3d9860800000000000000
+      internalID: 7538248837574081295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Teal Robot Player_46
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 53
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 326a09047141c0cc0800000000000000
+      internalID: -3743595100151699933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Teal Robot Player_0: 8906278368903136708
+      Teal Robot Player_1: -3449220477272834406
+      Teal Robot Player_10: -5790547292732191306
+      Teal Robot Player_11: -7882752788222943571
+      Teal Robot Player_12: -7974884082939747247
+      Teal Robot Player_13: 6832480772515752019
+      Teal Robot Player_14: -5329301372656487494
+      Teal Robot Player_15: 2742922524554536992
+      Teal Robot Player_16: 1711063751886929649
+      Teal Robot Player_17: -1957124753209957096
+      Teal Robot Player_18: 2442368007267098397
+      Teal Robot Player_19: -8222759973683464950
+      Teal Robot Player_2: -8276843677043187008
+      Teal Robot Player_20: -4657148908558548732
+      Teal Robot Player_21: 5933630779792152311
+      Teal Robot Player_22: 1185310212648742437
+      Teal Robot Player_23: 8507762187492003918
+      Teal Robot Player_24: -7075999930768499938
+      Teal Robot Player_25: -2405421563649763149
+      Teal Robot Player_26: -6452388703426204546
+      Teal Robot Player_27: -5715607482327013356
+      Teal Robot Player_28: 7171878610363889893
+      Teal Robot Player_29: 1605033402524205508
+      Teal Robot Player_3: -4158482408080117437
+      Teal Robot Player_30: 5534748617285075744
+      Teal Robot Player_31: -4693616849168385232
+      Teal Robot Player_32: -6393020471759086810
+      Teal Robot Player_33: 7945740630751073789
+      Teal Robot Player_34: -2632039961732687901
+      Teal Robot Player_35: -7676361899185346305
+      Teal Robot Player_36: 3998147333262367656
+      Teal Robot Player_37: 2214965655799593531
+      Teal Robot Player_38: -2390294937469472247
+      Teal Robot Player_39: 4149391987197426013
+      Teal Robot Player_4: 3590310499694516526
+      Teal Robot Player_40: -1127900104253657031
+      Teal Robot Player_41: 1747485241520111761
+      Teal Robot Player_42: 4669713920799711123
+      Teal Robot Player_43: 6815011645870479594
+      Teal Robot Player_44: -632203625001266515
+      Teal Robot Player_45: 7538248837574081295
+      Teal Robot Player_46: -3743595100151699933
+      Teal Robot Player_5: 6421936465888881716
+      Teal Robot Player_6: 4460302992026600447
+      Teal Robot Player_7: 3042803348345058441
+      Teal Robot Player_8: 1010256811209134764
+      Teal Robot Player_9: 3919728359589755212
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
