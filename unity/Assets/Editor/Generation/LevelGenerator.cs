@@ -1,217 +1,144 @@
+using System;
+using System.IO;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public static class LevelGenerator
 {
-    [MenuItem("Tools/Playable/Generate Level")]
+    [MenuItem("Tools/Playable/Generate From JSON")]
     public static void Generate()
     {
-        // Don't allow generation while in play mode or about to enter it.
+        string path = EditorUtility.OpenFilePanel("Choose level JSON", "", "json");
+        if (string.IsNullOrEmpty(path)) return;
+        try { GenerateFromFile(path); }
+        catch (Exception error)
+        {
+            Debug.LogException(error);
+            EditorUtility.DisplayDialog("Generation failed", error.Message, "OK");
+        }
+    }
+
+    // Call this method from a CLI adapter when you wire up your command.
+    // Set promptToSave=false for unattended operation in a dedicated generator
+    // project only: that setting skips prompts and replaces the active scene.
+    public static string GenerateFromFile(string jsonPath, bool promptToSave = true)
+    {
         if (EditorApplication.isPlayingOrWillChangePlaymode)
-        {
-            Debug.LogWarning("Exit Play mode before generating a level.");
-            return;
-        }
-
-        // get the saved asset profile, which contains the sprites to use for generation.
+            throw new InvalidOperationException("Exit Play mode first.");
+        var level = JsonUtility.FromJson<LevelData>(File.ReadAllText(jsonPath));
         var profile = AssetDatabase.LoadAssetAtPath<PlayableAssetProfile>(
-            "Assets/Playable/DefaultAssetProfile.asset"
-        );
+            "Assets/Playable/DefaultAssetProfile.asset");
+        Validate(level, profile);
 
-        // Check that the profile and required sprites are assigned.
-        if (profile == null || profile.player == null ||
-            profile.ground == null)
+        bool hasTerrain = level.terrain != null && level.terrain.Length > 0;
+        bool hasObjects = level.objects != null && level.objects.Length > 0;
+        Material material = null;
+        if (hasTerrain || hasObjects)
         {
-            EditorUtility.DisplayDialog(
-                "Missing Assets",
-                "Assign and save a player and ground sprite first.",
-                "OK"
-            );
-            return;
+            material = AssetDatabase.LoadAssetAtPath<Material>(
+                "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Unlit-Default.mat");
+            if (material == null)
+                throw new InvalidOperationException("URP Sprite-Unlit-Default material not found. This generator targets Universal 2D.");
         }
-
-        // Ask about unsaved work before opening a new scene.
-        if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
-            return;
-
-        var scene = EditorSceneManager.NewScene(
-            NewSceneSetup.EmptyScene,
-            NewSceneMode.Single
-        );
-
-        // Create the camera.
-        var cameraObject = new GameObject("Main Camera");
-        cameraObject.tag = "MainCamera";
-
-        var camera = cameraObject.AddComponent<Camera>();
-        camera.orthographic = true;
-        camera.orthographicSize = 5;
-        camera.transform.position = new Vector3(0, 3, -10);
-        camera.clearFlags = CameraClearFlags.SolidColor;
-        camera.backgroundColor = new Color(0.15f, 0.2f, 0.3f);
-
-        // Floor: a row of one-unit tiles.
-        // Create a grid and its terrain Tilemap.
-        var gridObject = new GameObject("Level Grid", typeof(Grid));
-
-        // Offset cells so their centres match the old platform positions.
-        gridObject.transform.position = new Vector3(-0.5f, -0.5f, 0);
-
-        var terrainObject = new GameObject(
-            "Terrain",
-            typeof(Tilemap),
-            typeof(TilemapRenderer)
-        );
-
-        terrainObject.transform.SetParent(gridObject.transform, false);
-
-        var tilemap = terrainObject.GetComponent<Tilemap>();
-
-        // Create or update a persistent Tile asset.
-        const string tileFolder = "Assets/Playable/Tiles";
-        const string tilePath = tileFolder + "/Ground.asset";
-
-        if (!AssetDatabase.IsValidFolder(tileFolder))
-        {
-            AssetDatabase.CreateFolder("Assets/Playable", "Tiles");
-        }
-
-        var groundTile = AssetDatabase.LoadAssetAtPath<Tile>(tilePath);
-
-        if (groundTile == null)
-        {
-            groundTile = ScriptableObject.CreateInstance<Tile>();
-            AssetDatabase.CreateAsset(groundTile, tilePath);
-        }
-
-        groundTile.sprite = profile.ground;
-        groundTile.colliderType = Tile.ColliderType.Grid;
-
-        // Fit the sprite rectangle to a 1-by-1 grid cell.
-        Vector2 spriteSize = profile.ground.bounds.size;
-        Vector2 spriteCentre = profile.ground.bounds.center;
-
-        Vector3 scale = new Vector3(
-            1f / spriteSize.x,
-            1f / spriteSize.y,
-            1f
-        );
-
-        groundTile.transform = Matrix4x4.TRS(
-            new Vector3(
-                -spriteCentre.x * scale.x,
-                -spriteCentre.y * scale.y,
-                0
-            ),
-            Quaternion.identity,
-            scale
-        );
-
-        EditorUtility.SetDirty(groundTile);
-        AssetDatabase.SaveAssets();
-
-        // Floor.
-        for (int x = -8; x <= 8; x++)
-        {
-            tilemap.SetTile(new Vector3Int(x, 0, 0), groundTile);
-        }
-
-        // First raised platform.
-        for (int x = -3; x <= -1; x++)
-        {
-            tilemap.SetTile(new Vector3Int(x, 2, 0), groundTile);
-        }
-
-        // Second raised platform: grid positions use whole numbers.
-        for (int x = 2; x <= 4; x++)
-        {
-            tilemap.SetTile(new Vector3Int(x, 4, 0), groundTile);
-        }
-
-        // Generate terrain collision.
-        terrainObject.AddComponent<TilemapCollider2D>();
-
-        // Player.
-        var player = CreateSprite(
-            "Player", profile.player,
-            new Vector2(-6, 2), new Vector2(0.8f, 1.2f)
-        );
-
-        player.AddComponent<BoxCollider2D>();
-
-        var body = player.AddComponent<Rigidbody2D>();
-        body.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-        // Optional objects: visual placement only for now.
-        if (profile.coin != null)
-        {
-            CreateSprite("Coin", profile.coin,
-                new Vector2(-2, 3), Vector2.one * 0.5f);
-        }
-
-        if (profile.spikes != null)
-        {
-            CreateSprite("Spikes", profile.spikes,
-                new Vector2(1, 0.8f), new Vector2(1, 0.6f));
-        }
-
-        if (profile.exit != null)
-        {
-            CreateSprite("Exit", profile.exit,
-                new Vector2(7, 1.25f), new Vector2(1, 1.5f));
-        }
+        if (promptToSave && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+            return null;
 
         if (!AssetDatabase.IsValidFolder("Assets/GeneratedLevels"))
-        {
             AssetDatabase.CreateFolder("Assets", "GeneratedLevels");
+        string folder = AssetDatabase.GenerateUniqueAssetPath(
+            "Assets/GeneratedLevels/" + SafeName(level.levelName));
+        AssetDatabase.CreateFolder("Assets/GeneratedLevels", Path.GetFileName(folder));
+        var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+
+        if (hasTerrain)
+            TerrainGenerator.Generate(level.terrain, profile.ground, material, folder);
+        if (hasObjects)
+        {
+            var parent = new GameObject("Level Objects").transform;
+            foreach (var item in level.objects)
+                ObjectGenerator.Generate(item, profile, material, parent);
         }
-
-        // Use a unique name so previous levels aren't overwritten.
-        string path = AssetDatabase.GenerateUniqueAssetPath(
-            "Assets/GeneratedLevels/TestLevel.unity"
-        );
-
-        if (EditorSceneManager.SaveScene(scene, path))
-            Debug.Log($"Generated level saved to {path}");
-        else
-            Debug.LogError("Could not save the generated scene.");
+        CreateCamera(level);
+        AssetDatabase.SaveAssets();
+        string scenePath = folder + "/Level.unity";
+        if (!EditorSceneManager.SaveScene(scene, scenePath))
+            throw new IOException("Could not save scene at " + scenePath);
+        Debug.Log("Generated level: " + scenePath);
+        return scenePath;
     }
 
-    private static void CreatePlatform(Sprite sprite, float x, float y)
+    private static void Validate(LevelData level, PlayableAssetProfile profile)
     {
-        var platform = CreateSprite(
-            "Ground", sprite,
-            new Vector2(x, y), Vector2.one
-        );
-
-        platform.AddComponent<BoxCollider2D>();
+        if (level == null || level.schemaVersion != 1)
+            throw new ArgumentException("Expected schemaVersion: 1.");
+        int terrainCount = level.terrain?.Length ?? 0;
+        int objectCount = level.objects?.Length ?? 0;
+        if ((long)terrainCount + objectCount > 10000)
+            throw new ArgumentException("Starter limit: 10,000 cells/objects.");
+        // A deliberately empty layout is valid and needs no asset profile.
+        if (terrainCount + objectCount == 0) return;
+        if (profile == null)
+            throw new InvalidOperationException("Save your Playable asset profile first.");
+        if (terrainCount > 0)
+        {
+            CheckSprite(profile.ground, "ground");
+            foreach (var cell in level.terrain)
+                if (cell == null || Math.Abs((long)cell.x) > 10000 || Math.Abs((long)cell.y) > 10000)
+                    throw new ArgumentException("Invalid terrain cell (coordinate limit: 10,000).");
+        }
+        int players = 0;
+        if (level.objects == null) return;
+        foreach (var item in level.objects)
+        {
+            if (item == null) throw new ArgumentException("Null object in layout.");
+            CheckSprite(ObjectGenerator.RequiredSprite(item.type, profile), item.type);
+            if (float.IsNaN(item.x) || float.IsInfinity(item.x) ||
+                float.IsNaN(item.y) || float.IsInfinity(item.y) ||
+                Math.Abs(item.x) > 10000 || Math.Abs(item.y) > 10000)
+                throw new ArgumentException("Invalid object coordinates.");
+            if (ObjectGenerator.NormalizeType(item.type) == "player" && ++players > 1)
+                throw new ArgumentException("This starter supports one player per level.");
+        }
     }
 
-    private static GameObject CreateSprite(
-        string name, Sprite sprite, Vector2 position, Vector2 size)
+    private static void CheckSprite(Sprite sprite, string role)
     {
-        var obj = new GameObject(name);
-        obj.transform.position = position;
+        if (sprite == null || sprite.bounds.size.x <= 0 || sprite.bounds.size.y <= 0)
+            throw new InvalidOperationException("Assign a valid " + role + " sprite in Asset Setup and Save Setup.");
+    }
 
-        var renderer = obj.AddComponent<SpriteRenderer>();
-        renderer.sprite = sprite;
+    private static string SafeName(string name)
+    {
+        string result = "";
+        foreach (char c in name ?? "GeneratedLevel")
+            result += char.IsLetterOrDigit(c) || c == '_' || c == '-' ? c : '_';
+        if (string.IsNullOrWhiteSpace(result)) result = "GeneratedLevel";
+        return result.Substring(0, Math.Min(64, result.Length));
+    }
 
-        // Normalize size regardless of the image's pixel dimensions.
-        Vector2 originalSize = sprite.bounds.size;
-        obj.transform.localScale = new Vector3(
-            size.x / originalSize.x,
-            size.y / originalSize.y,
-            1
-        );
-
-        // Keep test sprites visible without requiring scene lights.
-        renderer.sharedMaterial =
-            AssetDatabase.GetBuiltinExtraResource<Material>(
-                "Sprites-Default.mat"
-            );
-
-        return obj;
+    private static void CreateCamera(LevelData level)
+    {
+        Bounds bounds = new Bounds();
+        bool hasBounds = false;
+        Action<Vector2> include = point =>
+        {
+            var b = new Bounds(new Vector3(point.x, point.y, 0), new Vector3(2, 2, 0));
+            if (!hasBounds) { bounds = b; hasBounds = true; }
+            else bounds.Encapsulate(b);
+        };
+        if (level.terrain != null)
+            foreach (var cell in level.terrain) include(new Vector2(cell.x, cell.y));
+        if (level.objects != null)
+            foreach (var item in level.objects) include(new Vector2(item.x, item.y));
+        var cameraObject = new GameObject("Main Camera", typeof(Camera), typeof(AudioListener));
+        cameraObject.tag = "MainCamera";
+        var camera = cameraObject.GetComponent<Camera>();
+        camera.orthographic = true;
+        camera.orthographicSize = Mathf.Max(3, bounds.extents.y + 1,
+            (bounds.extents.x + 1) / Mathf.Max(0.1f, camera.aspect));
+        camera.transform.position = new Vector3(bounds.center.x, bounds.center.y, -10);
+        camera.clearFlags = CameraClearFlags.SolidColor;
+        camera.backgroundColor = new Color(0.15f, 0.2f, 0.3f);
     }
 }
