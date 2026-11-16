@@ -140,5 +140,19 @@ public static class LevelGenerator
         camera.transform.position = new Vector3(bounds.center.x, bounds.center.y, -10);
         camera.clearFlags = CameraClearFlags.SolidColor;
         camera.backgroundColor = new Color(0.15f, 0.2f, 0.3f);
+
+        var player = UnityEngine.Object.FindAnyObjectByType<Playable.Gameplay.PlayerController>();
+
+        if (player != null)
+        {
+            var follow = cameraObject.AddComponent<
+                Playable.Gameplay.CameraFollow>();
+
+            follow.target = player.transform;
+            follow.SnapToTarget();
+
+            // Use a closer view instead of fitting the entire level.
+            camera.orthographicSize = 4f;
+        }
     }
 }

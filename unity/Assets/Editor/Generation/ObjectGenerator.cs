@@ -42,6 +42,7 @@ public static class ObjectGenerator
         var obj = CreateSprite("Player", item, sprite, size, material, parent);
         obj.AddComponent<BoxCollider2D>().size = size;
         var body = obj.AddComponent<Rigidbody2D>();
+        body.interpolation = RigidbodyInterpolation2D.Interpolate;
         body.constraints = RigidbodyConstraints2D.FreezeRotation;
         body.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         obj.AddComponent<PlayerController>();
