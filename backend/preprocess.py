@@ -8,6 +8,8 @@ annotation_path = (
     backend_dir / "data" / "annotations" / "drawing_001.xml"
 )
 
+image_path = backend_dir / "data" / "images" / "drawing_001.png"
+
 root = ET.parse(annotation_path).getroot()
 
 box_coordinates = []
@@ -41,3 +43,37 @@ for obj in root.findall("object"):
 
 print("Box Coordinates:", box_coordinates)
 print("Labels:", labels)
+
+
+import torch
+from torchvision import tv_tensors
+from torchvision.io import decode_image
+from torchvision.utils import draw_bounding_boxes
+from matplotlib import pyplot as plt
+
+img = decode_image(str(image_path), mode="RGB")
+
+# Create a BoundingBoxes object from the box coordinates and the image size.
+boxes = tv_tensors.BoundingBoxes(
+    torch.tensor(box_coordinates, dtype=torch.float32).reshape(-1, 4),
+    format="XYXY",
+    canvas_size=img.shape[-2:],
+)
+
+# convert the numeric labels back into their names
+id_to_name = {value: key for key, value in class_ids.items()}
+label_names = [id_to_name[label] for label in labels]
+
+# draw the bounding boxes on the image
+preview = draw_bounding_boxes(
+    img,
+    boxes,
+    labels=label_names,
+    colors="red",
+    width=3,
+)
+
+plt.figure(figsize=(14, 8))
+plt.imshow(preview.permute(1, 2, 0)) # permute to convert from (C, H, W) to (H, W, C) for matplotlib
+plt.axis("off")
+plt.show()
