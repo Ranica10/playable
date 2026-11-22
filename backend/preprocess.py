@@ -124,24 +124,45 @@ transforms = v2.Compose(
     ]
 )
 
+# dataset = DrawingsDataset(
+#     root_dir=backend_dir / "data" / "images",
+#     csv_path=csv_path,
+#     transform=transforms
+# )
 
-dataset = DrawingsDataset(
-    root_dir=backend_dir / "data" / "images",
-    csv_path=csv_path,
+# fig, axes = plt.subplots(1, 4, figsize=(20, 6))
+
+# for i, ax in enumerate(axes):
+#     if i >= len(dataset):
+#         ax.axis("off")
+#         continue
+
+#     image, target = dataset[i]
+
+#     show_bounding_boxes(image, target, class_ids, ax)
+#     ax.set_title(f"Sample #{i} - {target['image_name']}")
+
+# plt.tight_layout()
+# plt.show()
+
+
+from torch.utils.data import DataLoader
+
+# Load training dataset
+train_dataset = DrawingsDataset(
+    root_dir=backend_dir / "data" / "train",
+    csv_path=backend_dir / "data" / "train" / "annotations.csv",
     transform=transforms
 )
 
-fig, axes = plt.subplots(1, 4, figsize=(20, 6))
+# Load validation dataset
+val_dataset = DrawingsDataset(
+    root_dir=backend_dir / "data" / "test",
+    csv_path=backend_dir / "data" / "test" / "annotations.csv",
+    transform=transforms
+)
 
-for i, ax in enumerate(axes):
-    if i >= len(dataset):
-        ax.axis("off")
-        continue
+# Load dataset with DataLoaders
+train_loader = DataLoader(train_dataset, batch_size=2, shuffle=True, collate_fn=lambda x: tuple(zip(*x)))
+val_loader = DataLoader(val_dataset, batch_size=1, shuffle=False, collate_fn=lambda x: tuple(zip(*x)))
 
-    image, target = dataset[i]
-
-    show_bounding_boxes(image, target, class_ids, ax)
-    ax.set_title(f"Sample #{i}")
-
-plt.tight_layout()
-plt.show()
