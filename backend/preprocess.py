@@ -166,3 +166,40 @@ val_dataset = DrawingsDataset(
 train_loader = DataLoader(train_dataset, batch_size=2, shuffle=True, collate_fn=lambda x: tuple(zip(*x)))
 val_loader = DataLoader(val_dataset, batch_size=1, shuffle=False, collate_fn=lambda x: tuple(zip(*x)))
 
+# Set device to GPU if available, otherwise use CPU
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+else:
+    device = torch.device("cpu")
+
+print(f"Using device: {device}")
+
+
+### Load the model for object detection
+
+import torchvision
+from torchvision.models.detection.faster_rcnn import FastRCNNPredictor, FasterRCNN_ResNet50_FPN_Weights
+
+# Load a pre-trained Faster R-CNN model with ResNet50 backbone and FPN
+model = torchvision.models.detection.fasterrcnn_resnet50_fpn(
+    weights=FasterRCNN_ResNet50_FPN_Weights.DEFAULT
+)
+
+# Number of classes in the dataset (+1 for background class)
+num_classes = len(class_ids) + 1
+
+# Number of input features for the classifier head
+in_features = model.roi_heads.box_predictor.cls_score.in_features
+
+# Replace the pre-trained head with a new one for our dataset
+model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
+
+# Move the model to the GPU for faster training
+model.to(device)
+
+# Get parameters that require gradients (the model's trainable parameters)
+params = [p for p in model.parameters() if p.requires_grad]
+
+# Define the optimizer SGD(Stochastic Gradient Descent) 
+optimizer = torch.optim.SGD(params, lr=0.005,
+                            momentum=0.9, weight_decay=0.0005)
