@@ -112,18 +112,24 @@ class DrawingsDataset(Dataset):
         return image, sample
 
 
-# Test the dataset and show bounding boxes for the first few images
+### Transforms
+from torchvision.transforms import v2
+
+transforms = v2.Compose(
+    [
+        v2.ToImage(),
+        v2.RandomHorizontalFlip(p=1),
+        v2.SanitizeBoundingBoxes(),
+        v2.ToDtype(torch.float32, scale=True),
+    ]
+)
+
 
 dataset = DrawingsDataset(
     root_dir=backend_dir / "data" / "images",
     csv_path=csv_path,
+    transform=transforms
 )
-
-image, target = dataset[0]
-
-print("Image shape:", image.shape)
-print("Boxes:", target["boxes"])
-print("Labels:", target["labels"])
 
 fig, axes = plt.subplots(1, 4, figsize=(20, 6))
 

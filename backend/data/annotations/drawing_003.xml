@@ -46,6 +46,18 @@
 			<ymax>939</ymax>
 		</bndbox>
 	</object>
+    <object>
+		<name>player</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>209</xmin>
+			<ymin>677</ymin>
+			<xmax>289</xmax>
+			<ymax>827</ymax>
+		</bndbox>
+	</object>
 	<object>
 		<name>collectible</name>
 		<pose>Unspecified</pose>

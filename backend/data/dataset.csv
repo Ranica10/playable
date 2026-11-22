@@ -19,6 +19,7 @@ terrain,51,377,441,105,drawing_002.png,1536,1024
 terrain,152,501,326,107,drawing_003.png,1536,1024
 terrain,1046,505,353,110,drawing_003.png,1536,1024
 terrain,60,807,1412,132,drawing_003.png,1536,1024
+player,209,677,80,150,drawing_003.png,1536,1024
 collectible,615,251,60,62,drawing_003.png,1536,1024
 collectible,875,253,49,49,drawing_003.png,1536,1024
 collectible,278,425,51,50,drawing_003.png,1536,1024
