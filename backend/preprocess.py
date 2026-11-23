@@ -108,6 +108,20 @@ class DrawingsDataset(Dataset):
         if self.transform is not None:
             image, sample = self.transform(image, sample)
 
+        # Use the final boxes after transformations.
+        final_boxes = sample["boxes"]
+
+        sample["image_id"] = int(idx)
+
+        sample["area"] = (
+            (final_boxes[:, 2] - final_boxes[:, 0])
+            * (final_boxes[:, 3] - final_boxes[:, 1])
+        )
+
+        sample["iscrowd"] = torch.zeros(
+            len(final_boxes), dtype=torch.int64
+        )
+
         # return the image and the sample dict
         return image, sample
 
@@ -115,14 +129,18 @@ class DrawingsDataset(Dataset):
 ### Transforms
 from torchvision.transforms import v2
 
-transforms = v2.Compose(
-    [
-        v2.ToImage(),
-        v2.RandomHorizontalFlip(p=1),
-        v2.SanitizeBoundingBoxes(),
-        v2.ToDtype(torch.float32, scale=True),
-    ]
-)
+train_transforms = v2.Compose([
+    v2.ToImage(),
+    v2.RandomHorizontalFlip(p=0.5),
+    v2.SanitizeBoundingBoxes(),
+    v2.ToDtype(torch.float32, scale=True),
+])
+
+val_transforms = v2.Compose([
+    v2.ToImage(),
+    v2.SanitizeBoundingBoxes(),
+    v2.ToDtype(torch.float32, scale=True),
+])
 
 # dataset = DrawingsDataset(
 #     root_dir=backend_dir / "data" / "images",
@@ -152,14 +170,14 @@ from torch.utils.data import DataLoader
 train_dataset = DrawingsDataset(
     root_dir=backend_dir / "data" / "train",
     csv_path=backend_dir / "data" / "train" / "annotations.csv",
-    transform=transforms
+    transform=train_transforms
 )
 
 # Load validation dataset
 val_dataset = DrawingsDataset(
     root_dir=backend_dir / "data" / "test",
     csv_path=backend_dir / "data" / "test" / "annotations.csv",
-    transform=transforms
+    transform=val_transforms
 )
 
 # Load dataset with DataLoaders
@@ -203,3 +221,42 @@ params = [p for p in model.parameters() if p.requires_grad]
 # Define the optimizer SGD(Stochastic Gradient Descent) 
 optimizer = torch.optim.SGD(params, lr=0.005,
                             momentum=0.9, weight_decay=0.0005)
+
+# and a learning rate scheduler
+lr_scheduler = torch.optim.lr_scheduler.StepLR(
+    optimizer,
+    step_size=3,
+    gamma=0.1
+)
+
+
+### Training loop
+
+import sys
+
+references_dir = backend_dir / "references"
+sys.path.insert(0, str(references_dir))
+
+from references.engine import train_one_epoch, evaluate
+
+models_dir = backend_dir / "models"
+models_dir.mkdir(parents=True, exist_ok=True)
+
+# Number of epochs for training
+num_epochs = 10
+
+# Loop through each epoch
+for epoch in range(num_epochs):
+    print(f"\nEpoch {epoch + 1}/{num_epochs}")
+
+    # Train the model for one epoch, printing status every 25 iterations
+    train_one_epoch(model, optimizer, train_loader, device, epoch, print_freq=25)  # Using train_loader for training
+
+    # Update the learning rate
+    lr_scheduler.step()
+
+    # Evaluate the model on the validation dataset after each epoch
+    evaluate(model, val_loader, device=device)  # Using val_loader for evaluation
+
+    # save the model after each epoch
+    torch.save(model.state_dict(), models_dir / f"model_epoch_{epoch + 1}.pth")
