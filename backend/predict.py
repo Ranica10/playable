@@ -64,6 +64,54 @@ boxes = prediction["boxes"][keep].cpu()
 labels = prediction["labels"][keep].cpu()
 scores = prediction["scores"][keep].cpu()
 
+
+### Post processing
+
+# Discard a lower-confidence terrain box when it lies almost entirely inside a higher-confidence terrain box
+
+for i in range(len(boxes)):
+    # check all terrain boxes
+    if labels[i] == class_ids["terrain"]:
+        for j in range(len(boxes)):
+            # compare box j with box i
+            if i != j:
+                # check if box j is almost entirely inside box i
+                if (
+                    boxes[j][0] >= boxes[i][0]
+                    and boxes[j][1] >= boxes[i][1]
+                    and boxes[j][2] <= boxes[i][2]
+                    and boxes[j][3] <= boxes[i][3]
+                ):
+                    # discard box j by setting its score to 0
+                    scores[j] = 0.0
+
+
+# Discard a collectible box fully inside a confidently detected exit
+for i in range(len(boxes)):
+    # check all exit boxes
+    if labels[i] == class_ids["exit"]:
+        for j in range(len(boxes)):
+            # compare box j with box i
+            if i != j and labels[j] == class_ids["collectible"]:
+                # check if box j is almost entirely inside box i
+                if (
+                    boxes[j][0] >= boxes[i][0]
+                    and boxes[j][1] >= boxes[i][1]
+                    and boxes[j][2] <= boxes[i][2]
+                    and boxes[j][3] <= boxes[i][3]
+                ):
+                    # discard box j by setting its score to 0
+                    scores[j] = 0.0
+
+
+# Keep only boxes with scores above the threshold after post-processing
+keep = scores >= threshold
+
+boxes = boxes[keep]
+labels = labels[keep]
+scores = scores[keep]
+
+
 display_labels = [
     f"{id_to_name[int(label)]}: {float(score):.2f}"
     for label, score in zip(labels, scores)
