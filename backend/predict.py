@@ -69,21 +69,32 @@ scores = prediction["scores"][keep].cpu()
 
 # Discard a lower-confidence terrain box when it lies almost entirely inside a higher-confidence terrain box
 
+# tolerance for how much a box can be inside another box and still be considered "inside"
+margin = 15  # pixels
+
 for i in range(len(boxes)):
-    # check all terrain boxes
-    if labels[i] == class_ids["terrain"]:
-        for j in range(len(boxes)):
-            # compare box j with box i
-            if i != j:
-                # check if box j is almost entirely inside box i
-                if (
-                    boxes[j][0] >= boxes[i][0]
-                    and boxes[j][1] >= boxes[i][1]
-                    and boxes[j][2] <= boxes[i][2]
-                    and boxes[j][3] <= boxes[i][3]
-                ):
-                    # discard box j by setting its score to 0
-                    scores[j] = 0.0
+    if labels[i] != class_ids["terrain"]:
+        continue
+
+    # check all other terrain boxes
+    for j in range(len(boxes)):
+        # only compare against a lower-confidence terrain box
+        if (i == j
+                or labels[j] != class_ids["terrain"]
+                or scores[j] >= scores[i]):
+            continue
+
+        # check if box j is almost entirely inside box i
+        inside = (
+            boxes[j][0] >= boxes[i][0] - margin
+            and boxes[j][1] >= boxes[i][1] - margin
+            and boxes[j][2] <= boxes[i][2] + margin
+            and boxes[j][3] <= boxes[i][3] + margin
+        )
+
+        # discard box j by setting its score to 0 if inside the other terrain box
+        if inside:
+            scores[j] = 0.0
 
 
 # Discard a collectible box fully inside a confidently detected exit
