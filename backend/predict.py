@@ -1,3 +1,4 @@
+import csv
 from pathlib import Path
 
 import torch
@@ -123,25 +124,37 @@ labels = labels[keep]
 scores = scores[keep]
 
 
-display_labels = [
-    f"{id_to_name[int(label)]}: {float(score):.2f}"
-    for label, score in zip(labels, scores)
-]
+### Save the predictions to a CSV file to use for level generation 
+predictions_csv_path = backend_dir / "data" / "predictions.csv"
 
-for name, box in zip(display_labels, boxes.tolist()):
-    print(name, box)
+with open(predictions_csv_path, "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["label", "x1", "y1", "x2", "y2", "id", "score"])
 
-print(f"Found {len(boxes)} objects above confidence {threshold}")
+    id_to_name = {v: k for k, v in class_ids.items()}
+    for box, id, score in zip(boxes.tolist(), labels.tolist(), scores.tolist()):
+        writer.writerow([id_to_name[id], box[0], box[1], box[2], box[3], id, score])
 
-preview = draw_bounding_boxes(
-    image,
-    boxes,
-    labels=display_labels,
-    colors="red",
-    width=3,
-)
 
-plt.figure(figsize=(14, 8))
-plt.imshow(preview.permute(1, 2, 0))
-plt.axis("off")
-plt.show()
+# display_labels = [
+#     f"{id_to_name[int(label)]}: {float(score):.2f}"
+#     for label, score in zip(labels, scores)
+# ]
+
+# for name, box in zip(display_labels, boxes.tolist()):
+#     print(name, box)
+
+# print(f"Found {len(boxes)} objects above confidence {threshold}")
+
+# preview = draw_bounding_boxes(
+#     image,
+#     boxes,
+#     labels=display_labels,
+#     colors="red",
+#     width=3,
+# )
+
+# plt.figure(figsize=(14, 8))
+# plt.imshow(preview.permute(1, 2, 0))
+# plt.axis("off")
+# plt.show()
