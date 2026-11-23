@@ -225,7 +225,7 @@ optimizer = torch.optim.SGD(params, lr=0.005,
 # and a learning rate scheduler
 lr_scheduler = torch.optim.lr_scheduler.StepLR(
     optimizer,
-    step_size=3,
+    step_size=10,
     gamma=0.1
 )
 
@@ -243,7 +243,7 @@ models_dir = backend_dir / "models"
 models_dir.mkdir(parents=True, exist_ok=True)
 
 # Number of epochs for training
-num_epochs = 10
+num_epochs = 30
 
 # Loop through each epoch
 for epoch in range(num_epochs):
