@@ -15,7 +15,7 @@ public static class ObjectGenerator
         switch (NormalizeType(type))
         {
             case "player": return profile.player;
-            case "coin": return profile.coin;
+            case "collectible": return profile.collectible;
             case "spikes": return profile.spikes;
             case "exit": return profile.exit;
             default: throw new ArgumentException("Unknown object type: " + type);
@@ -28,7 +28,7 @@ public static class ObjectGenerator
         switch (NormalizeType(item.type))
         {
             case "player": CreatePlayer(item, profile.player, material, parent); break;
-            case "coin": CreateCoin(item, profile.coin, material, parent); break;
+            case "collectible": CreateCollectible(item, profile.collectible, material, parent); break;
             case "spikes": CreateSpikes(item, profile.spikes, material, parent); break;
             case "exit": CreateExit(item, profile.exit, material, parent); break;
             default: throw new ArgumentException("Unknown object type: " + item.type);
@@ -48,13 +48,13 @@ public static class ObjectGenerator
         obj.AddComponent<PlayerController>();
     }
 
-    private static void CreateCoin(LevelObjectData item, Sprite sprite,
+    private static void CreateCollectible(LevelObjectData item, Sprite sprite,
         Material material, Transform parent)
     {
         var size = new Vector2(0.5f, 0.5f);
-        var obj = CreateSprite("Coin", item, sprite, size, material, parent);
+        var obj = CreateSprite("Collectible", item, sprite, size, material, parent);
         AddTrigger(obj, size);
-        obj.AddComponent<Coin>();
+        obj.AddComponent<Collectible>();
     }
 
     private static void CreateSpikes(LevelObjectData item, Sprite sprite,

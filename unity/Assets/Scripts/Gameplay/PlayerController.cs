@@ -10,7 +10,7 @@ namespace Playable.Gameplay
         public float moveSpeed = 6;
         public float jumpSpeed = 9;
         public float respawnBelowY = -20;
-        public int Coins { get; private set; }
+        public int Collectibles { get; private set; }
         public bool Completed { get; private set; }
         private Rigidbody2D body;
         private BoxCollider2D shape;
@@ -61,10 +61,10 @@ namespace Playable.Gameplay
                 if (hits[i].normal.y > 0.65f) return true;
             return false;
         }
-        public void AddCoin()
+        public void AddCollectible()
         {
-            Coins++;
-            Debug.Log($"Coins: {Coins}", this);
+            Collectibles++;
+            Debug.Log($"Collectibles: {Collectibles}", this);
         }
         public void Respawn()
         {
@@ -79,7 +79,7 @@ namespace Playable.Gameplay
             if (Completed) return;
             Completed = true;
             move = 0;
-            Debug.Log($"Level complete! Coins collected: {Coins}", this);
+            Debug.Log($"Level complete! Collectibles collected: {Collectibles}", this);
         }
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 namespace Playable.Gameplay
 {
-    public sealed class Coin : MonoBehaviour
+    public sealed class Collectible : MonoBehaviour
     {
         public UnityEvent onCollected = new UnityEvent();
         private bool collected;
@@ -12,7 +12,7 @@ namespace Playable.Gameplay
             var player = other.attachedRigidbody.GetComponent<PlayerController>();
             if (player == null || player.Completed) return;
             collected = true;
-            player.AddCoin();
+            player.AddCollectible();
             onCollected.Invoke();
             Destroy(gameObject);
         }
